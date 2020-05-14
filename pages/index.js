@@ -1,32 +1,30 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Kids dev tracker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
+        <h1 className="title">Welcome to Kids dev tracker!</h1>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/posts/first-post">
+            <a className="card">
+              <h3>Create</h3>
+            </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href="/about">
+            {/* if you link to external page of this next.js app, no need to have a tag */}
+            <a className="card">
+              <h3>About</h3>
+            </a>
+          </Link>
 
           <a
             href="https://github.com/zeit/next.js/tree/master/examples"
@@ -54,9 +52,22 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
+        <div>
+          Icons made by{" "}
+          <a
+            href="https://www.flaticon.com/authors/kiranshastry"
+            title="Kiranshastry"
+          >
+            Kiranshastry
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            www.flaticon.com
+          </a>
+        </div>
       </footer>
 
       <style jsx>{`
@@ -205,5 +216,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
