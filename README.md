@@ -9,7 +9,7 @@
 
 run `yarn` to install packages.
 
-run `yarn run dev` to start this project in http://localhost:3000/
+run `yarn dev` to start this project in http://localhost:3000/
 
 ## What are used in this project :game_die:
 

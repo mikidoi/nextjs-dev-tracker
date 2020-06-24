@@ -1,15 +1,36 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
+import { getSortedPostsData } from "../lib/posts";
 
-export default function Home() {
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <div className="container">
         <Head>
           <title>{siteTitle}</title>
         </Head>
-
+        <h2>Blog</h2>
+        <ul>
+          {allPostsData.map(({ id, date, title }) => (
+            <li key={id}>
+              {title}
+              <br />
+              {id}
+              <br />
+              {date}
+            </li>
+          ))}
+        </ul>
         <main>
           <h1 className="title">Welcome to Kids dev tracker!</h1>
 
