@@ -15,7 +15,7 @@ run `yarn dev` to start this project in http://localhost:3000/
 
 - **Next.js** - This project is build on the top of Next.js: The React Framework.
 - **Express.js**
-- **MongoDB**
+- **MongoDB** - I will use MongoDB and MongoDB Atlas to host my databse.
 - **CSS variables**
 - **Styled Component**
 - **Formik**
