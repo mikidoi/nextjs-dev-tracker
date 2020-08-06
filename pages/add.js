@@ -1,9 +1,11 @@
 import Layout from "../components/layout";
 
-export default function About() {
+const Add = () => {
   return (
     <Layout>
-      <h1>About</h1>
+      <h1>Add</h1>
     </Layout>
   );
-}
+};
+
+export default Add;

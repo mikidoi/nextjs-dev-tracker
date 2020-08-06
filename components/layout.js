@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
+import Footer from "./footer";
 export const siteTitle = "Kids Dev Tracker";
 
 const Container = styled.div`
@@ -8,6 +9,16 @@ const Container = styled.div`
   padding: 0 1rem;
   margin: 3rem auto 6rem;
 `;
+
+const Main = styled.div`
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default function Layout({ children, home }) {
   return (
     <Container>
@@ -27,17 +38,31 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <nav>
-        {home ? (
-          <p>home</p>
-        ) : (
-          <h2>
-            <Link href="/">
-              <a>menu</a>
+        <div>
+          <h3>
+            <Link href="/about">
+              <a>About</a>
             </Link>
-          </h2>
-        )}
+          </h3>
+          <h3>
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
+          </h3>
+          <h3>
+            <Link href="/add">
+              <a>Add</a>
+            </Link>
+          </h3>
+          <h3>
+            <Link href="/account">
+              <a>Account</a>
+            </Link>
+          </h3>
+        </div>
       </nav>
-      <main>{children}</main>
+      <Main>{children}</Main>
+      <Footer />
       {!home && (
         <div>
           <Link href="/">

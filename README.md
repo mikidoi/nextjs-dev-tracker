@@ -13,8 +13,11 @@ run `yarn dev` to start this project in http://localhost:3000/
 
 ## What are used in this project :game_die:
 
-- **Next.js** - This project is build on the top of Next.js.
+- **Next.js** - This project is build on the top of Next.js: The React Framework.
+- **Express.js**
+- **MongoDB**
 - **CSS variables**
+- **Styled Component**
 - **Formik**
 
 ## CSS rules :bouquet:
