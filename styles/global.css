@@ -1,122 +1,209 @@
+/* roboto-regular - latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/roboto/roboto-v20-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Roboto"), local("Roboto-Regular"),
+    url("/fonts/roboto/roboto-v20-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/roboto/roboto-v20-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/roboto/roboto-v20-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("/fonts/roboto/roboto-v20-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/roboto/roboto-v20-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* varela-round-regular - latin */
+@font-face {
+  font-family: "Varela Round";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/varela-round/varela-round-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Varela Round Regular"), local("VarelaRound-Regular"),
+    url("/fonts/varela-round/varela-round-v12-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("/fonts/varela-round/varela-round-v12-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/varela-round/varela-round-v12-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("/fonts/varela-round/varela-round-v12-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/varela-round/varela-round-v12-latin-regular.svg#VarelaRound")
+      format("svg"); /* Legacy iOS */
+}
+
 /* josefin-sans-100 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 100;
-  src: url("/fonts/josefin-sans-v16-latin-100.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-100.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-100.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-100.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-100.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-100.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-100.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-100.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-100.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-100.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-100.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-100.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-200 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 200;
-  src: url("/fonts/josefin-sans-v16-latin-200.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-200.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-200.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-200.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-200.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-200.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-200.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-200.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-200.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-200.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-200.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-200.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-300 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 300;
-  src: url("/fonts/josefin-sans-v16-latin-300.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-300.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-300.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-300.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-300.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-300.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-300.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-300.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-300.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-300.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-300.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-300.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-regular - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/josefin-sans-v16-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-regular.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-regular.woff2")
+    /* IE6-IE8 */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.woff2")
       format("woff2"),
     /* Super Modern Browsers */
-      url("/fonts/josefin-sans-v16-latin-regular.woff") format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-regular.ttf")
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-regular.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-regular.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-500 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 500;
-  src: url("/fonts/josefin-sans-v16-latin-500.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-500.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-500.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-500.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-500.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-500.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-500.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-500.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-500.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-500.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-500.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-500.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-600 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 600;
-  src: url("/fonts/josefin-sans-v16-latin-600.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-600.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-600.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-600.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-600.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-600.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-600.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-600.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-600.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-600.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-600.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
 }
 /* josefin-sans-700 - latin */
 @font-face {
   font-family: "Josefin Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("/fonts/josefin-sans-v16-latin-700.eot"); /* IE9 Compat Modes */
+  src: url("/fonts/josefin-sans/josefin-sans-v16-latin-700.eot"); /* IE9 Compat Modes */
   src: local(""),
-    url("/fonts/josefin-sans-v16-latin-700.eot?#iefix")
+    url("/fonts/josefin-sans/josefin-sans-v16-latin-700.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("/fonts/josefin-sans-v16-latin-700.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("/fonts/josefin-sans-v16-latin-700.woff")
-      format("woff"),
-    /* Modern Browsers */ url("/fonts/josefin-sans-v16-latin-700.ttf")
+    /* IE6-IE8 */ url("/fonts/josefin-sans/josefin-sans-v16-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-700.woff") format("woff"),
+    /* Modern Browsers */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-700.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/fonts/josefin-sans-v16-latin-700.svg#JosefinSans") format("svg"); /* Legacy iOS */
+      url("/fonts/josefin-sans/josefin-sans-v16-latin-700.svg#JosefinSans")
+      format("svg"); /* Legacy iOS */
+}
+
+/* nanum-pen-script-regular - latin */
+@font-face {
+  font-family: "Nanum Pen Script";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Nanum Pen"), local("NanumPen"),
+    url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/nanum-pen-script/nanum-pen-script-v15-latin-regular.svg#NanumPenScript")
+      format("svg"); /* Legacy iOS */
 }
 
 html,
@@ -125,7 +212,7 @@ body {
   margin: 0;
   line-height: 1.6;
   font-size: 18px;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Varela Round", sans-serif;
 }
 
 * {
@@ -133,7 +220,7 @@ body {
 }
 
 a {
-  color: #0070f3;
+  color: #303235;
   text-decoration: none;
 }
 
@@ -142,12 +229,14 @@ a:hover {
 }
 
 img {
-  max-width: 100%;
   display: block;
 }
 
 h1 {
   color: #09095f;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 3rem;
+  border-bottom: 1.2px solid #09095f;
 }
 
 h3 {

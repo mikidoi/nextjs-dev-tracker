@@ -1,8 +1,8 @@
 <h1 align="center">
-  Next js project
+  Next.js project
 </h1>
 <h2 align="center">
-  - Multilingual Kids Development Tracker -
+  - Kids Development Tracker -
 </h2>
 
 ## How to start this project

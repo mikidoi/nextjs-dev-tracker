@@ -50,6 +50,11 @@ export default function Layout({ children, home }) {
             </Link>
           </h3>
           <h3>
+            <Link href="/kids">
+              <a>Your Kids</a>
+            </Link>
+          </h3>
+          <h3>
             <Link href="/add">
               <a>Add</a>
             </Link>

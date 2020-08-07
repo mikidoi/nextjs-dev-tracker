@@ -1,17 +1,19 @@
 import Head from "next/head";
+import KidsCards from "../components/KidsCards";
 import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData } from "../lib/posts";
+// import { getSortedPostsData } from "../lib/posts";
+import getKids from "../data/data";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const allPostsData = getSortedPostsData();
+//   return {
+//     props: {
+//       allPostsData,
+//     },
+//   };
+// }
 
-export default function Home({ allPostsData }) {
+const Home = ({ kids }) => {
   return (
     <Layout home>
       <Head>
@@ -30,33 +32,15 @@ export default function Home({ allPostsData }) {
           ))}
         </ul> */}
       <h1>Welcome to Kids dev tracker!</h1>
-
-      {/* <Link href="/posts/first-post">
-              <a className="card">
-                <h3>Create</h3>
-              </a>
-            </Link>
-
-            <Link href="/posts/first-post">
-              <a className="card">
-                <h3>History</h3>
-              </a>
-            </Link> */}
-
-      {/* if you link to external page of this next.js app, no need to have a tag */}
-      {/*<Link href="/about">
-              <a className="card">
-                <h3>About</h3>
-              </a>
-            </Link>
-
-             <a
-              href="https://github.com/zeit/next.js/tree/master/examples"
-              className="card"
-            >
-              <h3>Examples &rarr;</h3>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a> */}
+      <KidsCards kids={kids} />
     </Layout>
   );
-}
+};
+
+Home.getInitialProps = async ({}) => {
+  return {
+    kids: getKids(),
+  };
+};
+
+export default Home;
