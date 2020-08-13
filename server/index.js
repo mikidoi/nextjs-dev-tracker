@@ -1,4 +1,7 @@
 const express = require("express");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const flash = require("connect-flash");
 const next = require("next");
 const bodyParser = require("body-parser");
 
@@ -10,13 +13,28 @@ const handle = app.getRequestHandler();
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-const db = mongoose.connect(process.env.MONGO_DBURI);
+const db = mongoose.connect(process.env.MONGO_DBURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const Kids = require("./models/kidsModel.js");
+const { catchErrors } = require("../handlers/helpers");
 const { createKids } = require("./controllers/kidsContoller.js");
 
 app.prepare().then(() => {
   const server = express();
+
+  server.use(cookieParser("keyboard cat"));
+  server.use(
+    session({
+      secret: "keyboard cat",
+      resave: false,
+      saveUninitialized: false,
+      cookie: { maxAge: 60000 },
+    })
+  );
+  server.use(flash());
 
   // Takes the raw requests and turns them into usable properties on req.body
   server.use(bodyParser.json());
