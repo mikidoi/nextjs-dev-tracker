@@ -10,11 +10,6 @@ const handle = app.getRequestHandler();
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-// import environmental variables from our variables.env file
-// require("dotenv").config({ path: "next.config.js" });
-
-console.log(process.env.MONGO_DBURI);
-
 const db = mongoose.connect(process.env.MONGO_DBURI);
 
 const Kids = require("./models/kidsModel.js");
