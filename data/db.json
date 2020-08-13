@@ -1,0 +1,36 @@
+{
+  "kids": [
+    {
+      "id": 123,
+      "name": "Marina",
+      "description": "tiger",
+      "photo": "/images/marina01.jpg"
+    },
+    {
+      "id": 124,
+      "name": "Karina",
+      "description": "dinosaurs",
+      "photo": "/images/karina01.jpg"
+    },
+    {
+      "name": "Miki",
+      "description": "something",
+      "id": 125
+    },
+    {
+      "name": "Marina",
+      "description": "Princess",
+      "id": 126
+    },
+    {
+      "name": "Marina",
+      "description": "Princess",
+      "id": 127
+    },
+    {
+      "name": "Karina",
+      "description": " dinosaurs",
+      "id": 128
+    }
+  ]
+}

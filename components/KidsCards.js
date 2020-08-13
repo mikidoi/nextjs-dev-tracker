@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const CardsContainer = styled.div`
@@ -54,18 +56,24 @@ const Name = styled.p`
 `;
 
 const KidsCards = ({ kids }) => {
+  const router = useRouter();
+  const { name } = router.query;
   return (
     <CardsContainer>
       {kids.map((kid) => (
-        <Card key={kid.id}>
-          <CardWrapper>
-            <Img src={kid.photo} alt={kid.name} />
-            <div>
-              <NickName>{kid.description}</NickName>
-              <Name>{kid.name}</Name>
-            </div>
-          </CardWrapper>
-        </Card>
+        <Link key={kid.id} href="/kid/[name]" as={`/kid/${kid.name}`}>
+          <a>
+            <Card>
+              <CardWrapper>
+                <Img src={kid.photo} alt={kid.name} />
+                <div>
+                  <NickName>{kid.description}</NickName>
+                  <Name>{kid.name}</Name>
+                </div>
+              </CardWrapper>
+            </Card>
+          </a>
+        </Link>
       ))}
     </CardsContainer>
   );
