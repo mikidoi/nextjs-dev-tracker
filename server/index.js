@@ -20,7 +20,7 @@ const db = mongoose.connect(process.env.MONGO_DBURI, {
 
 const Kids = require("./models/kidsModel.js");
 const { catchErrors } = require("../handlers/helpers");
-const { createKids } = require("./controllers/kidsContoller.js");
+const { createKids, getKids } = require("./controllers/kidsContoller.js");
 
 app.prepare().then(() => {
   const server = express();
@@ -42,11 +42,10 @@ app.prepare().then(() => {
 
   // const showRoutes = require("./routes/index.js");
 
-  server.get("/", (req, res) => {
-    Kids.find({}, (err, kids) => {
-      // res.json(kids); // empty [] for now
-      return app.render(req, res, "/kids");
-    });
+  server.get("/kids", async (req, res) => {
+    const kids = await getKids();
+    return app.render(req, res, "/kids");
+    // });
   });
 
   // server.get("/add", showRoutes);

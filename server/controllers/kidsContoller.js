@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Kids = require("../models/kidsModel");
+const Kids = require("../models/kidsModel.js");
 const { handlePromise } = require("../../handlers/helpers");
 
 exports.createKids = async (req, res) => {
@@ -10,4 +10,9 @@ exports.createKids = async (req, res) => {
   // res.redirect(`/`);
 
   await handlePromise(req, res, kid.save());
+};
+
+exports.getKids = async () => {
+  const kidsData = await Kids.find();
+  return kidsData;
 };

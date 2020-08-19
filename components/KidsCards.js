@@ -61,7 +61,7 @@ const KidsCards = ({ kids }) => {
   return (
     <CardsContainer>
       {kids.map((kid) => (
-        <Link key={kid.id} href="/kid/[name]" as={`/kid/${kid.name}`}>
+        <Link key={kid._id} href="/kid/[name]" as={`/kid/${kid.name}`}>
           <a>
             <Card>
               <CardWrapper>

@@ -7,4 +7,11 @@ const kidsModel = new Schema({
   description: { type: String },
 });
 
-module.exports = mongoose.model("Kids", kidsModel);
+let Kids;
+try {
+  Kids = mongoose.model("Kids");
+} catch {
+  Kids = mongoose.model("Kids", kidsModel);
+}
+
+module.exports = Kids;

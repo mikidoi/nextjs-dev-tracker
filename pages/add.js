@@ -10,4 +10,10 @@ const Add = () => {
   );
 };
 
+// export async function getServerSideProps({ res, params }) {
+//   res.writeHead(303, { Location: "http://localhost:3000/kids" });
+//   res.end();
+//   console.log(res.statusCode);
+// }
+
 export default Add;
