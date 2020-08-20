@@ -3,8 +3,14 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 const kidsModel = new Schema({
-  name: { type: String },
-  description: { type: String },
+  name: { type: String, trim: true, required: "Please enter a kid name" },
+  slug: String,
+  description: { type: String, trim: true },
+  created: {
+    type: Date,
+    default: Date.now,
+  },
+  photo: String,
 });
 
 let Kids;

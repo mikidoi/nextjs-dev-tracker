@@ -21,6 +21,7 @@ export async function getStaticProps(context) {
   const kids = result.map((data) => {
     const kid = data.toObject();
     kid._id = kid._id.toString();
+    kid.created = kid.created.toString();
     return kid;
   });
   return {
