@@ -4,22 +4,17 @@ import { useState } from "react";
 export default function KidsForm(params) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [photo, setPhoto] = useState("");
   const router = useRouter();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const kid = { name, description };
-    console.log({
-      name,
-      description,
-    });
-    fetch(`http://localhost:3000/add`, {
+
+    const formData = new FormData(e.target);
+
+    await fetch(`http://localhost:3000/add`, {
       method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(kid),
+      body: formData,
       redirect: "follow",
     }).then((res) => {
       router.push("/kids");
@@ -28,7 +23,12 @@ export default function KidsForm(params) {
     });
   };
   return (
-    <form action="/add" method="post" onSubmit={handleSubmit}>
+    <form
+      action="/add"
+      method="post"
+      encType="multipart/form-data"
+      onSubmit={handleSubmit}
+    >
       <label htmlFor="name">Name</label>
       <input
         type="text"
@@ -42,6 +42,14 @@ export default function KidsForm(params) {
         name="description"
         id="description"
         onChange={(e) => setDescription(e.target.value)}
+      />
+      <label htmlFor="photo">Photo</label>
+      <input
+        type="file"
+        name="photo"
+        id="photo"
+        accept="image/gif, image/png, image/jpeg"
+        onChange={(e) => setPhoto(e.target.files[0])}
       />
       <input type="submit" value="Save" />
     </form>

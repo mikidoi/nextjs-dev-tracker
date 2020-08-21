@@ -20,7 +20,7 @@ const db = mongoose.connect(process.env.MONGO_DBURI, {
 
 const Kids = require("./models/kidsModel.js");
 const { catchErrors } = require("../handlers/helpers");
-const { createKids, getKids } = require("./controllers/kidsContoller.js");
+const kidsContoller = require("./controllers/kidsContoller");
 
 app.prepare().then(() => {
   const server = express();
@@ -37,20 +37,25 @@ app.prepare().then(() => {
   server.use(flash());
 
   // Takes the raw requests and turns them into usable properties on req.body
-  server.use(bodyParser.json());
-  server.use(bodyParser.urlencoded({ extended: true }));
+  server.use(bodyParser.json({ limit: "50mb" }));
+  server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
   // const showRoutes = require("./routes/index.js");
 
   server.get("/kids", async (req, res) => {
-    const kids = await getKids();
+    const kids = await kidsContoller.getKids();
     return app.render(req, res, "/kids");
     // });
   });
 
   // server.get("/add", showRoutes);
 
-  server.post("/add", createKids);
+  server.post(
+    "/add",
+    kidsContoller.upload,
+    kidsContoller.resize,
+    kidsContoller.createKids
+  );
 
   // exports.createStore = async (req, res) => {
   //   req.body.author = req.user._id;

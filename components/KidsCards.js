@@ -65,7 +65,7 @@ const KidsCards = ({ kids }) => {
           <a>
             <Card>
               <CardWrapper>
-                <Img src={kid.photo} alt={kid.name} />
+                <Img src={`/images/${kid.photo}`} alt={kid.name} />
                 <div>
                   <NickName>{kid.description}</NickName>
                   <Name>{kid.name}</Name>
