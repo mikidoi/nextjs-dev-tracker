@@ -1,8 +1,21 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useState } from "react";
 import styled from "styled-components";
 import Footer from "./footer";
 export const siteTitle = "Kids Dev Tracker";
+
+const MenuIcon = styled.svg`
+  margin-left: auto;
+  :hover {
+    cursor: pointer;
+  }
+`;
+
+const MenuWrapper = styled.div`
+  margin-left: auto;
+  padding: 2rem;
+`;
 
 const Container = styled.div`
   max-width: 36rem;
@@ -20,6 +33,7 @@ const Main = styled.div`
 `;
 
 export default function Layout({ children, home }) {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>
       <Head>
@@ -38,33 +52,46 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <nav>
-        <div>
-          <h3>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
-          </h3>
-          <h3>
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          </h3>
-          <h3>
-            <Link href="/kids">
-              <a>Your Kids</a>
-            </Link>
-          </h3>
-          <h3>
-            <Link href="/add">
-              <a>Add</a>
-            </Link>
-          </h3>
-          <h3>
-            <Link href="/account">
-              <a>Account</a>
-            </Link>
-          </h3>
-        </div>
+        {/* TODO: Add close button and add transition effect */}
+        <MenuIcon
+          viewBox="0 0 100 80"
+          width="40"
+          height="40"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <rect width="100" height="20" rx="8"></rect>
+          <rect y="30" width="100" height="20" rx="8"></rect>
+          <rect y="60" width="100" height="20" rx="8"></rect>
+        </MenuIcon>
+        {isOpen && (
+          <MenuWrapper>
+            <h3>
+              <Link href="/about">
+                <a>About</a>
+              </Link>
+            </h3>
+            <h3>
+              <Link href="/login">
+                <a>Login</a>
+              </Link>
+            </h3>
+            <h3>
+              <Link href="/kids">
+                <a>Your Kids</a>
+              </Link>
+            </h3>
+            <h3>
+              <Link href="/add">
+                <a>Add</a>
+              </Link>
+            </h3>
+            <h3>
+              <Link href="/account">
+                <a>Account</a>
+              </Link>
+            </h3>
+          </MenuWrapper>
+        )}
       </nav>
       <Main>{children}</Main>
       <Footer />
