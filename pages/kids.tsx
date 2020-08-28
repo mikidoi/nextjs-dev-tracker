@@ -1,22 +1,31 @@
 import Head from "next/head";
 import KidsCards from "../components/KidsCards";
 import Layout, { siteTitle } from "../components/layout";
+import { GetStaticProps } from "next";
 const { getKids } = require("../server/controllers/kidsContoller");
 
-export default function Kids({ kids }) {
+interface Kid {
+  description: string;
+  name: string;
+  photo: string;
+}
+
+const Kids = (props: { kids: Kid[] }) => {
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <h1>Your kids</h1>
-      <KidsCards kids={kids} />
+      <KidsCards kids={props.kids} />
     </Layout>
   );
-}
+};
+
+export default Kids;
 
 // getStaticProps are fetched at build time
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context) => {
   const result = await getKids();
   const kids = result.map((data) => {
     const kid = data.toObject();
@@ -29,4 +38,4 @@ export async function getStaticProps(context) {
       kids,
     },
   };
-}
+};

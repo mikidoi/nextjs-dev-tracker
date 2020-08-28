@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import styled from "styled-components";
 import Footer from "./footer";
 export const siteTitle = "Kids Dev Tracker";
@@ -32,7 +32,12 @@ const Main = styled.div`
   align-items: center;
 `;
 
-export default function Layout({ children, home }) {
+interface Props {
+  children: ReactNode;
+  home?: string;
+}
+
+const Layout = (props: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>
@@ -93,9 +98,9 @@ export default function Layout({ children, home }) {
           </MenuWrapper>
         )}
       </nav>
-      <Main>{children}</Main>
+      <Main>{props.children}</Main>
       <Footer />
-      {!home && (
+      {!props.home && (
         <div>
           <Link href="/">
             <a>← Back to home</a>
@@ -104,4 +109,6 @@ export default function Layout({ children, home }) {
       )}
     </Container>
   );
-}
+};
+
+export default Layout;
