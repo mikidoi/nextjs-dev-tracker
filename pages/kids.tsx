@@ -5,19 +5,20 @@ import { GetStaticProps } from "next";
 const { getKids } = require("../server/controllers/kidsContoller");
 
 interface Kid {
+  _id: number;
   description: string;
   name: string;
   photo: string;
 }
 
-const Kids = (props: { kids: Kid[] }) => {
+const Kids = ({ kids }: { kids: Kid[] }) => {
   return (
     <Layout>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <h1>Your kids</h1>
-      <KidsCards kids={props.kids} />
+      <KidsCards kids={kids} />
     </Layout>
   );
 };

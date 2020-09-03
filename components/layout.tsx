@@ -32,12 +32,7 @@ const Main = styled.div`
   align-items: center;
 `;
 
-interface Props {
-  children: ReactNode;
-  home?: string;
-}
-
-const Layout = (props: Props) => {
+const Layout = ({ children, home }: { children: ReactNode; home?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Container>
@@ -98,9 +93,9 @@ const Layout = (props: Props) => {
           </MenuWrapper>
         )}
       </nav>
-      <Main>{props.children}</Main>
+      <Main>{children}</Main>
       <Footer />
-      {!props.home && (
+      {!home && (
         <div>
           <Link href="/">
             <a>← Back to home</a>

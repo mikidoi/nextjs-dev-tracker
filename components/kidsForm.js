@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function KidsForm(params) {
+const KidsForm = (params) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
@@ -54,4 +54,6 @@ export default function KidsForm(params) {
       <input type="submit" value="Save" />
     </form>
   );
-}
+};
+
+export default KidsForm;

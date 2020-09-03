@@ -55,20 +55,27 @@ const Name = styled.p`
   display: inline;
 `;
 
-const KidsCards = ({ kids }) => {
+interface Kid {
+  _id: number;
+  description: string;
+  name: string;
+  photo: string;
+}
+
+const KidsCards = ({ kids }: { kids: Kid[] }): JSX.Element => {
   const router = useRouter();
   const { name } = router.query;
   return (
     <CardsContainer>
-      {kids.map((kid) => (
-        <Link key={kid._id} href="/kid/[name]" as={`/kid/${kid.name}`}>
+      {kids.map(({ _id, name, photo, description }) => (
+        <Link key={_id} href="/kid/[name]" as={`/kid/${name}`}>
           <a>
             <Card>
               <CardWrapper>
-                <Img src={`/images/${kid.photo}`} alt={kid.name} />
+                <Img src={`/images/${photo}`} alt={name} />
                 <div>
-                  <NickName>{kid.description}</NickName>
-                  <Name>{kid.name}</Name>
+                  <NickName>{description}</NickName>
+                  <Name>{name}</Name>
                 </div>
               </CardWrapper>
             </Card>
