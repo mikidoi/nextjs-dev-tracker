@@ -18,19 +18,20 @@ export default function Kid({ kid }) {
 }
 
 export async function getStaticPaths() {
-  const name = "Marina";
-  const res = await fetch(`http://localhost:3000/kids`);
-  const kids = await res.json();
+  const slug = "karina";
+  const res = await fetch(`http://localhost:3000/kid/${slug}`);
+  const kid = await res.json();
+  console.log("kid: ", kid);
 
   const paths = kids.map((kid) => ({
-    params: { id: kid.id, name: kid.name },
+    params: { id: kid.id, slug: kid.slug },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`http://localhost:3000/kids?name=${params.name}`);
+  const res = await fetch(`http://localhost:3000/kid/${params.slug}`);
   const kid = await res.json();
 
   return { props: { kid } };

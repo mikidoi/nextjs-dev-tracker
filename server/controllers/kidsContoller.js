@@ -61,7 +61,21 @@ exports.createKids = async (req, res) => {
   await handlePromise(req, res, kid.save());
 };
 
-exports.getKids = async () => {
+// exports.getKids = async (req, res) => {
+//   const kidsData = await Kids.find();
+//   return kidsData;
+// };
+
+exports.getKids = async (req, res) => {
   const kidsData = await Kids.find();
-  return kidsData;
+  res.json(kidsData);
+};
+
+exports.getKidBySlug = async (req, res, next) => {
+  console.log("req.params.slug: ", req.params.slug);
+  const kidData = await Kids.findOne({ slug: req.params.slug });
+  if (!kidData) {
+    next();
+  }
+  console.log(kidData);
 };

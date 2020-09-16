@@ -60,18 +60,29 @@ interface Kid {
   description: string;
   name: string;
   photo: string;
+  slug: string;
 }
 
-const KidsCards = ({ kids }: { kids: Kid[] }): JSX.Element => {
-  const router = useRouter();
-  const { name } = router.query;
+const KidsCards = (props: {
+  kids: Kid[];
+  handleRemoveKid: (id: number) => void;
+}): JSX.Element => {
+  // const router = useRouter();
+  // const { name } = router.query;
+
   return (
     <CardsContainer>
-      {kids.map(({ _id, name, photo, description }) => (
-        <Link key={_id} href="/kid/[name]" as={`/kid/${name}`}>
+      {props.kids.map(({ _id, name, photo, description, slug }) => (
+        <Link key={_id} href="/kid/[slug]" as={`/kid/${slug}`}>
           <a>
             <Card>
               <CardWrapper>
+                <button
+                  type="button"
+                  onClick={() => props.handleRemoveKid(_id)}
+                >
+                  x
+                </button>
                 <Img src={`/images/${photo}`} alt={name} />
                 <div>
                   <NickName>{description}</NickName>

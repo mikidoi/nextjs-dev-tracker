@@ -42,10 +42,20 @@ app.prepare().then(() => {
 
   // const showRoutes = require("./routes/index.js");
 
-  server.get("/kids", async (req, res) => {
-    const kids = await kidsContoller.getKids();
-    return app.render(req, res, "/kids");
-    // });
+  server.get("/api/kids", async (req, res) => {
+    const kids = await kidsContoller.getKids(req, res);
+  });
+
+  server.get("/kid/:slug", async (req, res, next) => {
+    // const kid = await kidsContoller.getKidBySlug(req, res, next);
+    // console.log("kid: ", kid);
+    console.log("req.params.slug: ", req.params.slug);
+    const kidData = await Kids.findOne({ slug: req.params.slug });
+    if (!kidData) {
+      next();
+    }
+    console.log(kidData);
+    return app.render(req, res, `/kid/${req.params.slug}`);
   });
 
   // server.get("/add", showRoutes);
