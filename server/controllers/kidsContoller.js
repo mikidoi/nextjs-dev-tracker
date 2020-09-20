@@ -72,10 +72,18 @@ exports.getKids = async (req, res) => {
 };
 
 exports.getKidBySlug = async (req, res, next) => {
-  console.log("req.params.slug: ", req.params.slug);
+  // console.log("req.params.slug: ", req.params.slug);
   const kidData = await Kids.findOne({ slug: req.params.slug });
   if (!kidData) {
     next();
   }
-  console.log(kidData);
+  // console.log(kidData);
+};
+
+exports.deleteKid = async (id) => {
+  await Kids.deleteOne({
+    _id: id,
+  })
+    .then((result) => console.log("Deleted"))
+    .catch((err) => console.err(err));
 };

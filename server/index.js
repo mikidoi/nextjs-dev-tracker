@@ -42,19 +42,15 @@ app.prepare().then(() => {
 
   // const showRoutes = require("./routes/index.js");
 
-  server.get("/api/kids", async (req, res) => {
-    const kids = await kidsContoller.getKids(req, res);
-  });
-
   server.get("/kid/:slug", async (req, res, next) => {
     // const kid = await kidsContoller.getKidBySlug(req, res, next);
     // console.log("kid: ", kid);
     console.log("req.params.slug: ", req.params.slug);
     const kidData = await Kids.findOne({ slug: req.params.slug });
+    console.log("kidData: ", kidData);
     if (!kidData) {
       next();
     }
-    console.log(kidData);
     return app.render(req, res, `/kid/${req.params.slug}`);
   });
 
@@ -81,6 +77,19 @@ app.prepare().then(() => {
 
   server.get("/posts/:id", (req, res) => {
     return app.render(req, res, "/posts", { id: req.params.id });
+  });
+
+  server.get("/api/kids", async (req, res) => {
+    const kids = await kidsContoller.getKids(req, res);
+  });
+
+  server.get("/api/kid/:slug", async (req, res) => {
+    const kid = await Kids.findOne({ slug: req.params.slug });
+    res.json(kid);
+  });
+
+  server.delete("/deleteKid/:id", async (req, res) => {
+    await kidsContoller.deleteKid(req.params.id);
   });
 
   server.get("/api/shows", (req, res) => {

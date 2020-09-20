@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 import styled from "styled-components";
 
 const CardsContainer = styled.div`
@@ -72,20 +72,21 @@ const KidsCards = (props: {
 
   return (
     <CardsContainer>
-      {props.kids.map(({ _id, name, photo, description, slug }) => (
-        <Link key={_id} href="/kid/[slug]" as={`/kid/${slug}`}>
-          <a>
+      {props.kids.map((kid) => (
+        <Link key={kid._id} href="/kid/[slug]" as={`/kid/${kid.slug}`}>
+          <a {...kid}>
             <Card>
               <CardWrapper>
                 <button
                   type="button"
-                  onClick={() => props.handleRemoveKid(_id)}
+                  onClick={() => props.handleRemoveKid(kid._id)}
                 >
                   x
                 </button>
-                <Img src={`/images/${photo}`} alt={name} />
+
+                <Img src={`/images/${kid.photo}`} alt={name} />
                 <div>
-                  <NickName>{description}</NickName>
+                  <NickName>{kid.description}</NickName>
                   <Name>{name}</Name>
                 </div>
               </CardWrapper>

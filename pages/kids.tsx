@@ -15,9 +15,13 @@ const Kids = () => {
       });
   };
 
-  const handleRemoveKid = (id: number): void => {
-    setKids(kids.filter((kid) => kid._id !== id));
-    // TODO: remove from database as well!
+  const handleRemoveKid = async (id: number): Promise<string> => {
+    await setKids(kids.filter((kid) => kid._id !== id));
+    return await fetch(`/deleteKid/${id}`, {
+      method: "delete",
+    })
+      .then((res) => res.json())
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
