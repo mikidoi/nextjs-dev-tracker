@@ -87,7 +87,7 @@ const KidsCards = (props: {
                 <Img src={`/images/${kid.photo}`} alt={name} />
                 <div>
                   <NickName>{kid.description}</NickName>
-                  <Name>{name}</Name>
+                  <Name>{kid.name}</Name>
                 </div>
               </CardWrapper>
             </Card>
