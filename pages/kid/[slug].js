@@ -23,8 +23,19 @@ export default function Kid() {
   };
 
   useEffect(() => {
-    fetchKidBySlug(slug);
+    const storedKid = localStorage.getItem("kid");
+    const kidObject = JSON.parse(storedKid);
+    kidObject && Object.keys(kidObject).length !== 0 && setKid(kidObject);
+    slug && fetchKidBySlug(slug);
+
+    return function cleanup() {
+      localStorage.removeItem("kid");
+    };
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("kid", JSON.stringify(kid));
+  }, [kid]);
 
   return (
     <Layout>
