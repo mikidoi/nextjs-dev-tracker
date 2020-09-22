@@ -13,11 +13,12 @@ run `yarn dev` to start this project in http://localhost:3000/
 
 ## How to run by using Docker
 
-`docker-compose up`
-
-`docker run -d -p 4000:3000 <your_username>/docker-nextjs:latest`
+run `docker-compose up -d` to run Docker container in the background.
+run `docker-compose up --build` to rebuild the container when you made change.
 
 and go to http://localhost:4000/ (Wait a while. It might take some time to be ready..)
+
+run `docker-compose down` to stop running the containers.
 
 ## What are used in this project :game_die:
 
