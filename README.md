@@ -13,7 +13,7 @@ run `yarn dev` to start this project in http://localhost:3000/
 
 ## How to run by using Docker
 
-`docker build -t <your_username>/docker-nextjs .`
+`docker-compose up`
 
 `docker run -d -p 4000:3000 <your_username>/docker-nextjs:latest`
 

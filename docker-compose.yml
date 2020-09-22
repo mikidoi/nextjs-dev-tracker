@@ -1,0 +1,7 @@
+version: "3"
+services:
+  docker-nextjs:
+    restart: on-failure
+    build: .
+    ports:
+      - "4000:3000"
