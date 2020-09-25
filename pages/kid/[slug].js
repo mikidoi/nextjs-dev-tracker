@@ -1,6 +1,8 @@
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import EditSvg from "../../assets/svg/edit.svg";
 import Layout from "../../components/layout";
 
 const Img = styled.img`
@@ -15,32 +17,41 @@ export default function Kid() {
   const slug = router.query.slug;
 
   const fetchKidBySlug = async () => {
-    await fetch(`/api/kid/${slug}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setKid(data);
-      });
+    try {
+      const res = await axios.get(`/api/kid/${slug}`);
+      const { data } = res;
+      setKid(data);
+    } catch (error) {
+      console.error(error);
+    }
+
+    // If I use fetch API:
+    // await fetch(`/api/kid/${slug}`)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     setKid(data);
+    //   });
   };
 
   useEffect(() => {
-    const storedKid = localStorage.getItem("kid");
-    const kidObject = JSON.parse(storedKid);
-    kidObject && Object.keys(kidObject).length !== 0 && setKid(kidObject);
-    slug && fetchKidBySlug(slug);
-
-    return function cleanup() {
-      localStorage.removeItem("kid");
-    };
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("kid", JSON.stringify(kid));
-  }, [kid]);
+    if (slug) {
+      fetchKidBySlug(slug);
+    }
+  }, [slug]);
 
   return (
     <Layout>
-      <h1>{kid.name}</h1>
-      <Img src={`/images/${kid.photo}`} alt={kid.name} />
+      {Object.keys(kid).length !== 0 ? (
+        <>
+          <a href={`/kids/edit/${kid._id}`}>
+            <EditSvg width={30} height={35} />
+          </a>
+          <h1>{kid.name}</h1>
+          <Img src={`/images/${kid.photo}`} alt={kid.name} />
+        </>
+      ) : (
+        <div>Loading...</div>
+      )}
     </Layout>
   );
 }
